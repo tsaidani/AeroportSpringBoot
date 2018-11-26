@@ -30,6 +30,7 @@ public class Reservation {
 	@Column(name="date_reservation",length =100)
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
+<<<<<<< Updated upstream
 	@JsonView(JsonViews.Common.class)
 	private Date dateReservation; 
 
@@ -39,6 +40,13 @@ public class Reservation {
 	@JsonView(JsonViews.Common.class)
 	private Date heureReservation;
  
+=======
+	private Date dateReservation;
+	@DateTimeFormat(pattern="HH:mm")
+	@Column(name="heure_reservation",length =100)
+	@Temporal(TemporalType.TIME)
+	private Date heureReservation;
+>>>>>>> Stashed changes
 	@ManyToOne
 	@JoinColumn(name="id_client")
 	@JsonView(JsonViews.Common.class)

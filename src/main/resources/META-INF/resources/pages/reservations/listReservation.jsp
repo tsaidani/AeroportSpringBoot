@@ -31,8 +31,10 @@
 				<td>${reservation.numeroReservation}</td>
 				<td><fmt:formatDate value="${reservation.dateReservation}"
 						pattern="yyyy/MM/dd" /></td>
-				<%-- <td><fmt:formatDate value="${reservation.heureReservation}"
-						pattern="HH:mm" /></td> --%>
+				<td><fmt:formatDate value="${reservation.heureReservation}"
+						pattern="HH:mm" /></td>
+				<td>${reservation.}</td>		
+				
 				<td><a class="btn btn-warning"
 					href="./editReservation?numeroReservation=${reservation.numeroReservation}">Edit</a></td>
 				<td><a class="btn btn-danger"
