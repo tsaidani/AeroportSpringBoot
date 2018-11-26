@@ -4,12 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @DiscriminatorValue("M")
 public class ClientMoral extends Client{
 
 
 	@Column
+	@JsonView(JsonViews.Common.class)
 	private String siret;
 	public ClientMoral() {
 		super();

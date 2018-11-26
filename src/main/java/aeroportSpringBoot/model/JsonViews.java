@@ -17,5 +17,10 @@ public class JsonViews {
 	
 	public static class ReservationWithPassager extends Common{
 		
-	}	 
+	}
+	
+	public static class ClientWithReservation extends Common{
+		
+	}
+	
 }
