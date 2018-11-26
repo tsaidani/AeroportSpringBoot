@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Login;
-import repositories.LoginRepository;
+import aeroportSpringBoot.model.Login;
+import aeroportSpringBoot.repositories.LoginRepository;
 
 @Service
 public class LoginService {

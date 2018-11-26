@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Adresse;
-import model.Passager;
-import repositories.PassagerRepository;
+import aeroportSpringBoot.model.Adresse;
+import aeroportSpringBoot.model.Passager;
+import aeroportSpringBoot.repositories.PassagerRepository;
 
 @Service
 public class PassagerService {
