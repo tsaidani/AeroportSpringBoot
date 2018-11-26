@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import aeroportSpringBoot.model.Compagnie;
-import aeroportSpringBoot.repositories.CompagnieRepository;
+import model.Compagnie;
+import repositories.CompagnieRepository;
 
 @Service
 public class CompagnieService {

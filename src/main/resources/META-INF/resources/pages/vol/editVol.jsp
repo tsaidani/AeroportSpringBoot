@@ -36,33 +36,27 @@
 						<form:options items="${aeroports}" itemLabel="nom"
 							itemValue="idAeroport" />
 					</form:select>
-					<form:errors path="aeroportDepart.idAeroport"></form:errors>
 				</div>
 				<div class="form-group">
 					<form:label path="aeroportArrivee.idAeroport">aeroportArrivee  : </form:label>
 					<form:select path="aeroportArrivee.idAeroport" items="${aeroports}"
 						itemLabel="nom" itemValue="idAeroport" cssClass="form-control"></form:select>
-					<form:errors path="aeroportArrivee.idAeroport"></form:errors>
 				</div>
 				<div class="form-group">
 					<form:label path="dateDepart">dateDepart : </form:label>
 					<form:input type="date" path="dateDepart" cssClass="form-control" />
-					<form:errors path="dateDepart"></form:errors>
 				</div>
 				<div class="form-group">
 					<form:label path="dateArrivee">dateArrivee : </form:label>
 					<form:input type="date" path="dateArrivee" cssClass="form-control" />
-					<form:errors path="dateArrivee"></form:errors>
 				</div>
 				<div class="form-group">
 					<form:label path="heureDepart">heureDepart : </form:label>
 					<form:input type="time" path="heureDepart" cssClass="form-control" />
-					<form:errors path="heureDepart"></form:errors>
 				</div>
 				<div class="form-group">
 					<form:label path="heureArrivee">heureArrivee : </form:label>
 					<form:input type="time" path="heureArrivee" cssClass="form-control" />
-					<form:errors path="heureArrivee"></form:errors>
 				</div>
 				<!-- 								<div class="form-group"> -->
 				<%-- 									<form:label path="reservations">reservations : </form:label> --%>
@@ -79,8 +73,11 @@
 				<!-- 				</div> -->
 
 
+
+				
+
 				<div>
-					<button class="btn btn-success" type="submit">Enregistrer</button>
+					<button class="btn btn-success" type="submit">Sauvegarder</button>
 					<a class="btn btn-danger" href="./">Annuler</a>
 					<!-- Remonte d'une page si annulation  -->
 				</div>

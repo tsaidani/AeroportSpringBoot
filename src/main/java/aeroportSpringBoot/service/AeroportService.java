@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import aeroportSpringBoot.model.Aeroport;
-import aeroportSpringBoot.repositories.AeroportRepository;
+import model.Aeroport;
+import repositories.AeroportRepository;
 
 @Service
 public class AeroportService {

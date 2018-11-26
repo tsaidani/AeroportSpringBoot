@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import aeroportSpringBoot.model.Compagnie;
-import aeroportSpringBoot.model.CompagnieVol;
-import aeroportSpringBoot.model.CompagnieVolKey;
-import aeroportSpringBoot.model.Vol;
-import aeroportSpringBoot.repositories.CompagnieVolRepository;
+import model.Compagnie;
+import model.CompagnieVol;
+import model.CompagnieVolKey;
+import model.Vol;
+import repositories.CompagnieVolRepository;
 
 @Service
 public class CompagnieVolService {

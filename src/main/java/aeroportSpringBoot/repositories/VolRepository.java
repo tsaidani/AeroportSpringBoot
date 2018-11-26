@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import aeroportSpringBoot.model.Vol;
+import model.Vol;
 
 public interface VolRepository extends JpaRepository<Vol, Integer> {
 
@@ -28,7 +28,4 @@ public interface VolRepository extends JpaRepository<Vol, Integer> {
 	@Query("select v from Vol v left join fetch v.compagniesVol where v.idVol=:id")
 	Optional<Vol> findVolWithCompagniesVol(@Param("id") Integer idVol);
 
-	
-	@Query("select v from Vol v left join fetch v.reservations")
-	List<Vol> findAllWithReservation();
 }

@@ -1,7 +1,0 @@
-package aeroportSpringBoot.model;
-
-public enum Role {
-
-	ADMIN, USER;
-	
-}
