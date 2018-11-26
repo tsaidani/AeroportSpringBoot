@@ -56,7 +56,8 @@ public class ClientController {
 	
 	@GetMapping("/addClientMoral")
 	public ModelAndView addMoral() {
-			return goEdit(new ClientMoral()); 
+			return goEdit(new ClientMoral());
+		
 	}
 	@GetMapping("/addClientEl")
 	public ModelAndView addEl(Client client) {
@@ -66,7 +67,8 @@ public class ClientController {
 	@GetMapping("/editClient")
 	public ModelAndView edit(@RequestParam(name = "clientId", required = true) Integer clientId) {
 		Client c= clientService.findClientWithReservation(clientId);
-		return goEdit(c); 
+		return goEdit(c);
+
 	}
 	@GetMapping("/saveClientPhy")
 	public ModelAndView saveClient(@Valid @ModelAttribute("client") ClientPhysique client, BindingResult br) {
