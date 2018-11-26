@@ -21,6 +21,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 
 @Table(name = "client")
@@ -30,18 +32,19 @@ import javax.persistence.Version;
 public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqClient")
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "id_client", length = 50)
 	private Integer clientId;
-
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "nom_client", length = 100)
 	private String clientName;
-
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "numero_tel", length = 100)
 	private Integer numeroTel;
-
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "numero_fax", length = 100)
 	private Integer numeroFax;
-
+	@JsonView(JsonViews.Common.class)
 	@Column(name = "mail_client", length = 100)
 	private String mail;
 
@@ -63,6 +66,7 @@ public class Client {
 	@Version
 	private int version;
 
+	@JsonView(JsonViews.ClientWithReservation.class)
 	@OneToMany(mappedBy = "client")
 	private List<Reservation> reservations;
 
