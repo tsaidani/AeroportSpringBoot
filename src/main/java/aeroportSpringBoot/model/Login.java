@@ -1,10 +1,13 @@
 package aeroportSpringBoot.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -28,6 +31,8 @@ public class Login {
 	private int version;
 	@OneToOne(mappedBy="login")
 	private Client client;
+	@OneToMany(mappedBy = "login")
+	private Set<LoginRole> roles;
 	
 	public Login() {
 		super();
@@ -84,6 +89,18 @@ public class Login {
 
 
 
+	public Set<LoginRole> getRoles() {
+		return roles;
+	}
+
+
+
+	public void setRoles(Set<LoginRole> roles) {
+		this.roles = roles;
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -111,4 +128,8 @@ public class Login {
 		return true;
 	}
 	
+}
+>>>>>>> Stashed changes
+
+
 }

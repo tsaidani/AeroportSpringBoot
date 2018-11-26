@@ -16,7 +16,7 @@
 			<legend>Edition de réservation</legend>
 			<form:form action="saveReservation" method="get"
 				modelAttribute="reservation">
-				 <form:hidden path="version" />
+				<form:hidden path="version" />
 				<div class="form-group">
 					<form:label path="numeroReservation">Numéro de la réservation</form:label>
 					<form:input path="numeroReservation" readonly="true"
@@ -29,12 +29,74 @@
 						cssClass="form-control"></form:input>
 					<form:errors path="dateReservation"></form:errors>
 				</div>
-			<%-- 	<div class="form-group">
+<<<<<<< Updated upstream
+				<%-- 	<div class="form-group">
+=======
+				
+				<div class="form-group">
+>>>>>>> Stashed changes
 					<form:label path="heureReservation">Heure de la réservation</form:label>
-					<form:input type="time" path="heureReservation"
-						cssClass="form-control"></form:input>
-					<form:errors path="heureReservation"></form:errors>
-				</div> --%>
+					<form:input type="time" path="heureReservation" cssClass="form-control" />
+				</div>
+
+				<div class="form-group">
+					<form:label path="client">Client</form:label>
+					<form:select path="client" cssClass="form-control">
+						<form:option value="">pas de client</form:option>
+						<form:options items="${client.clientId}" itemLabel="clientId"
+							itemValue="clientId" />
+					</form:select>
+					<form:errors path="client"></form:errors>
+				</div>
+
+				<div class="form-group">
+					<form:label path="passager">Passager</form:label>
+					<form:select path="passager" cssClass="form-control">
+						<form:option value="">Passager</form:option>
+						<form:options items="${passager.idPassager}"
+							itemLabel="passagerId" itemValue="passagerId" />
+					</form:select>
+					<form:errors path="passager"></form:errors>
+				</div>
+
+				<div class="form-group">
+					<form:label path="vol">Vol</form:label>
+					<form:select path="vol" cssClass="form-control">
+						<form:option value="">Vol</form:option>
+						<form:options items="${vol.idVol}" itemLabel="idVol"
+							itemValue="idVol" />
+					</form:select>
+					<form:errors path="vol"></form:errors>
+				</div>
+
+				<div class="form-group">
+					<form:label path="client">Client</form:label>
+					<form:select path="client" cssClass="form-control">
+						<form:option value="">pas de client</form:option>
+						<form:options items="${client}" itemLabel="clientId"
+							itemValue="clientId" />
+					</form:select>
+					<form:errors path="client"></form:errors>
+				</div>
+
+				<div class="form-group">
+					<form:label path="passager">Passager</form:label>
+					<form:select path="passager" cssClass="form-control">
+						<form:option value="">Passager</form:option>
+						<form:options items="${passager}" itemLabel="passagerId"
+							itemValue="passagerId" />
+					</form:select>
+					<form:errors path="passager"></form:errors>
+				</div>
+
+				<div class="form-group">
+					<form:label path="vol">Vol</form:label>
+					<form:select path="vol" cssClass="form-control">
+						<form:option value="">Vol</form:option>
+						<form:options items="${vol}" itemLabel="idVol" itemValue="idVol" />
+					</form:select>
+					<form:errors path="vol"></form:errors>
+				</div>
 
 				<div>
 					<button class="btn btn-success" type="submit">Valider</button>
