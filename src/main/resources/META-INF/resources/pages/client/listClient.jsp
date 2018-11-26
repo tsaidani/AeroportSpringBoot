@@ -16,6 +16,13 @@
 <title>Liste des personnes</title>
 </head>
 <body>
+
+        <jsp:include page="../accueil.jsp">
+        <jsp:param  name="titre" value="Vols"/> 
+        </jsp:include>
+        <hr/>
+ 
+
 	<table class="table">
 		<tr>
 			<th>id</th>

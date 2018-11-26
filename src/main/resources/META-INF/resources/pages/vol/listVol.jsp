@@ -22,7 +22,6 @@
         <jsp:param  name="titre" value="Vols"/> 
         </jsp:include>
         <hr/>
-
 	<table class="table">
 		<tr>
 			<th>idVol</th>
@@ -51,10 +50,10 @@
 <%-- 				<td><c:forEach var="resa" items="${reservations}"> --%>
 <%-- 					${resa.numeroReservation} --%>
 <%-- 				</c:forEach></td> --%>
-				<td><a class="btn btn-warning" href="./reservations?id=${vol.idVol}">Réservations</a></td>
+				<td><a class="btn btn-warning" href="./reservations?id=${vol.idVol}">Rï¿½servations</a></td>
 				<td><a class="btn btn-info" href="./edit?id=${vol.idVol }">Editer</a></td>
 				<td><a class="btn btn-danger" href="./delete?id=${vol.idVol }">Supprimer</a></td>
-				<!--  il ne faut afficher certaines parties de code qu'à certaines conditions : cout si formateur, ordi et entreprise si stagiaire... -->
+				<!--  il ne faut afficher certaines parties de code qu'ï¿½ certaines conditions : cout si formateur, ordi et entreprise si stagiaire... -->
 			</tr>
 		</c:forEach>
 
