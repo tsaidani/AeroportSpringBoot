@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import aeroportSpringBoot.model.JsonViews;
 import aeroportSpringBoot.model.Vol;
-import aeroportSpringBoot.service.VolService;
+import aeroportSpringBoot.service.VolService; 
 
 @RestController
 @RequestMapping("/rest/vol")
