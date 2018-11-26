@@ -12,6 +12,13 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
+
+
+        <jsp:include page="../accueil.jsp">
+        <jsp:param  name="titre" value="Vols"/> 
+        </jsp:include>
+        <hr/>
+
 	<table class="table">
 		<tr>
 			<th>id</th>
