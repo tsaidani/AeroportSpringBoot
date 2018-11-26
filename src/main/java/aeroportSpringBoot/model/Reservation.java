@@ -37,6 +37,8 @@ public class Reservation {
 	@Column(name = "heure_reservation", length = 20)
 	@JsonView(JsonViews.Common.class)
 	private Date heureReservation;
+ 
+
 	@ManyToOne
 	@JoinColumn(name="id_client")
 	@JsonView(JsonViews.Common.class)
@@ -76,7 +78,7 @@ public class Reservation {
 	public Client getClient() {
 		return client;
 	}
-
+	
 	public Date getHeureReservation() {
 		return heureReservation;
 	}
