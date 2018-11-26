@@ -22,7 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private CustomUserDetailService userDetailService;
 
-//	 definition des pages securisees
+	// definition des pages securisees
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/accueil/").permitAll();

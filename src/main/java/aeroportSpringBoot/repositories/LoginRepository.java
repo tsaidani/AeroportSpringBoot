@@ -17,5 +17,5 @@ public interface LoginRepository extends JpaRepository<Login, Integer> {
 	Optional<Login> findWithId(@Param("id") Integer id);
 
 	@Query("select l from Login l left join fetch l.roles where l.login=?1")
-	Optional<Login> findByIdWithRoles(String login);
+	public Optional<Login> findByIdWithRoles(String login);
 }
