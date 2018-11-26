@@ -54,7 +54,7 @@ public class VolController {
 
 	@GetMapping("/edit")
 	public ModelAndView edit(@RequestParam(name = "id", required = true) Integer id) {
-		Vol vol = volservice.findById(id);
+		Vol vol = volservice.findVolById(id);
 		return goEdit(vol);
 	}
 
