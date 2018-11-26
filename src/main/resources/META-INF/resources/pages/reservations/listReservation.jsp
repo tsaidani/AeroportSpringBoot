@@ -28,17 +28,18 @@
 		</tr>
 		<c:forEach var="reservation" items="${reservations}">
 			<tr>
-				<td>${reservation.numeroReservation}</td>
-				<td><fmt:formatDate value="${reservation.dateReservation}"
+				<td>${Reservation.numeroReservation}</td>
+				<td><fmt:formatDate value="${Reservation.dateReservation}"
 						pattern="yyyy/MM/dd" /></td>
-				<td><fmt:formatDate value="${reservation.heureReservation}"
+				<td><fmt:formatDate value="${Reservation.heureReservation}"
 						pattern="HH:mm" /></td>
-				<td>${reservation.}</td>		
-				
+				<td>${reservation.client}</td>	
+				<td>${reservation.passager}</td>	
+				<td>${reservation.vol}</td>	
 				<td><a class="btn btn-warning"
-					href="./editReservation?numeroReservation=${reservation.numeroReservation}">Edit</a></td>
+					href="./editReservation?numeroReservation=${Reservation.numeroReservation}">Edit</a></td>
 				<td><a class="btn btn-danger"
-					href="./deleteReservation?numeroReservation=${reservation.numeroReservation}">Delete</a></td>
+					href="./deleteReservation?numeroReservation=${Reservation.numeroReservation}">Delete</a></td>
 
 			</tr>
 		</c:forEach>

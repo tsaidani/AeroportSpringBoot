@@ -32,7 +32,6 @@ public class Reservation {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@JsonView(JsonViews.Common.class)
 	private Date dateReservation; 
-
 	@DateTimeFormat(pattern = "HH:mm")
 	@Temporal(TemporalType.TIME)
 	@Column(name = "heure_reservation", length = 20)
