@@ -15,6 +15,7 @@ import aeroportSpringBoot.model.Client;
 import aeroportSpringBoot.model.ClientEl;
 import aeroportSpringBoot.model.ClientMoral;
 import aeroportSpringBoot.model.ClientPhysique;
+import aeroportSpringBoot.model.Reservation;
 import aeroportSpringBoot.service.ClientService;
 import aeroportSpringBoot.service.ReservationService;
 
@@ -39,7 +40,13 @@ public class ClientController {
 		return modelAndView;
 
 	}
-
+	
+//	@GetMapping("/reservations")
+//	public ModelAndView reservations(@RequestParam(name = "id", required = true) Integer id) {
+//		Reservation reservation = reservationService;
+//		ModelAndView modelAndView = new ModelAndView("vol/reservations", "reservations", volservice.showReservationByVol(vol.getIdVol())); 
+//		return modelAndView;
+//	}
 
 	
 	@GetMapping("/deleteClient")
