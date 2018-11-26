@@ -44,13 +44,13 @@ public class ReservationRestController {
 	}
 	
 	@GetMapping(path = { "/reservation" })
-	@JsonView(JsonViews.ReservationWithClient.class)
+	@JsonView(JsonViews.ReservationWithVol.class)
 	public ResponseEntity<List<Reservation>> findReservationByVol(Vol vol) {
 		return new ResponseEntity<>(reservationRepository.findByVolId(vol.getIdVol()), HttpStatus.OK);
 	}
 	
 	@GetMapping(path = { "/reservation" })
-	@JsonView(JsonViews.ReservationWithClient.class)
+	@JsonView(JsonViews.ReservationWithPassager.class)
 	public ResponseEntity<List<Reservation>> findReservationWithPassager(Passager passager) {
 		return new ResponseEntity<>(reservationRepository.findByIdPassager(passager.getIdPassager()), HttpStatus.OK);
 	}

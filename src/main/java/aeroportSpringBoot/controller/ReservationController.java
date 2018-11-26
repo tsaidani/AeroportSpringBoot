@@ -75,4 +75,6 @@ public class ReservationController {
 		reservationService.createReservation(reservation);
 		return new ModelAndView("redirect:/reservation/");
 	}
+	
+	
 }
