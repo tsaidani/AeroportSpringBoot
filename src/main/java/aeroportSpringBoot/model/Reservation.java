@@ -29,6 +29,12 @@ public class Reservation {
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dateReservation;
+
+	@DateTimeFormat(pattern = "HH:mm")
+	@Temporal(TemporalType.TIME)
+	@Column(name = "heure_reservation", length = 20)
+	private Date heureReservation;
+
 	@ManyToOne
 	@JoinColumn(name="id_client")
 	private Client client;
@@ -44,6 +50,14 @@ public class Reservation {
 	
 	public Reservation() {
 		
+	}
+
+	public Date getHeureReservation() {
+		return heureReservation;
+	}
+
+	public void setHeureReservation(Date heureReservation) {
+		this.heureReservation = heureReservation;
 	}
 
 	public Integer getNumeroReservation() {
