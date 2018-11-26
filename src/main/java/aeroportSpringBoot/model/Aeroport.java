@@ -13,6 +13,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @Table(name = "aeroport")
 @SequenceGenerator(name = "seqAeroport", sequenceName = "seq_aeroport", initialValue = 10, allocationSize = 10)
@@ -22,8 +24,10 @@ public class Aeroport {
 	@Column(name = "id_aeroport", length = 5, nullable = false)
 	private Integer idAeroport;
 	@Column(name = "nom_aeroport", length = 150)
+	@JsonView(JsonViews.Common.class)
 	private String nom;
 	@OneToMany(mappedBy = "key.aeroport")
+	@JsonView(JsonViews.Common.class)
 	private Set<VilleAeroport> villesAeroport;
 	@OneToMany(mappedBy = "key.aeroport")
 	@Column(name = "vol", length = 100)

@@ -5,7 +5,7 @@ public class JsonViews {
 
 	}
 
-	public static class VolsWithReservation {
+	public static class VolWithReservation extends Common{
 
 	}
 }

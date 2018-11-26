@@ -17,6 +17,8 @@ import javax.persistence.Version;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @SequenceGenerator(name="seqIdReservation",sequenceName="seq_id_reservation", initialValue=50,allocationSize=1)
 public class Reservation {
@@ -28,18 +30,22 @@ public class Reservation {
 	@Column(name="date_reservation",length =100)
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@JsonView(JsonViews.Common.class)
 	private Date dateReservation;
 
 	@DateTimeFormat(pattern = "HH:mm")
 	@Temporal(TemporalType.TIME)
 	@Column(name = "heure_reservation", length = 20)
+	@JsonView(JsonViews.Common.class)
 	private Date heureReservation;
 
 	@ManyToOne
 	@JoinColumn(name="id_client")
+	@JsonView(JsonViews.Common.class)
 	private Client client;
 	@ManyToOne
 	@JoinColumn(name="id_passager")
+	@JsonView(JsonViews.Common.class)
 	private Passager passager;
 	@ManyToOne
 	@JoinColumn(name="id_vol")
