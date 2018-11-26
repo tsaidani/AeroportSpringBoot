@@ -6,9 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import model.Client;
-import model.Reservation;
-import model.Vol;
+import aeroportSpringBoot.model.Client;
 
 public interface ClientRepository extends JpaRepository<Client, Integer>{
 
