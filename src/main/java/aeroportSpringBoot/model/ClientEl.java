@@ -4,9 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @DiscriminatorValue("El")
 public class ClientEl extends Client {
+	@JsonView(JsonViews.Common.class)
 	@Column
 	private String prenom;
 
