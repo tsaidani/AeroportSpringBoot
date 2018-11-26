@@ -30,23 +30,13 @@ public class Reservation {
 	@Column(name="date_reservation",length =100)
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-<<<<<<< Updated upstream
 	@JsonView(JsonViews.Common.class)
 	private Date dateReservation; 
-
 	@DateTimeFormat(pattern = "HH:mm")
 	@Temporal(TemporalType.TIME)
 	@Column(name = "heure_reservation", length = 20)
 	@JsonView(JsonViews.Common.class)
 	private Date heureReservation;
- 
-=======
-	private Date dateReservation;
-	@DateTimeFormat(pattern="HH:mm")
-	@Column(name="heure_reservation",length =100)
-	@Temporal(TemporalType.TIME)
-	private Date heureReservation;
->>>>>>> Stashed changes
 	@ManyToOne
 	@JoinColumn(name="id_client")
 	@JsonView(JsonViews.Common.class)
@@ -85,6 +75,18 @@ public class Reservation {
 
 	public Client getClient() {
 		return client;
+	}
+
+	public Date getHeureReservation() {
+		return heureReservation;
+	}
+
+	public void setHeureReservation(Date heureReservation) {
+		this.heureReservation = heureReservation;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public Passager getPassager() {
