@@ -70,5 +70,5 @@ public class Escale {
 		} else if (!key.equals(other.key))
 			return false;
 		return true;
-	}	
+	} 
 }

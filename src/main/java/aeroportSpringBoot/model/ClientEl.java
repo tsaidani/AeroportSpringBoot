@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 public class ClientEl extends Client {
 	@JsonView(JsonViews.Common.class)
 	@Column
+	@JsonView(JsonViews.Common.class)
 	private String prenom;
 
 	public ClientEl() {

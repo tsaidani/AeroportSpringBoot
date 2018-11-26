@@ -14,7 +14,7 @@
 <title>Liste des personnes</title>
 </head>
 <body>
-
+ 
 	<div>
 		<c:if test="${pageContext.request.userPrincipal.name != null}">
 			logged as ${pageContext.request.userPrincipal.name}<a class="btn"

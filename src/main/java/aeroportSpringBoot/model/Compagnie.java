@@ -12,6 +12,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @Table(name = "compagnie")
 @SequenceGenerator(name = "seqCompagnie", sequenceName = "seq_compagnie", initialValue = 5, allocationSize = 5)
@@ -21,8 +23,9 @@ public class Compagnie {
 	@Column(name = "id_compagnie", length = 50, nullable = false)
 	private Integer idCompagnie;
 	@Column(name = "nom_compagnie", length = 150)
+	@JsonView(JsonViews.Common.class)
 	private String nom;
-	@OneToMany(mappedBy = "key.compagnie")
+	@OneToMany(mappedBy = "key.compagnie") 
 	private Set<CompagnieVol> compagnieVols;
 	@Version
 	private int version;

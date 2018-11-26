@@ -16,7 +16,7 @@ import aeroportSpringBoot.repositories.AeroportRepository;
 import aeroportSpringBoot.repositories.ReservationRepository;
 import aeroportSpringBoot.repositories.VolRepository;
 import aeroportSpringBoot.service.AeroportService;
-import aeroportSpringBoot.service.VolService;
+import aeroportSpringBoot.service.VolService; 
 
 @Controller
 @RequestMapping("/vol")
@@ -65,7 +65,8 @@ public class VolController {
 
 	
 	@GetMapping("/reservations")
-	public ModelAndView findResa(Vol vol) {
+	public ModelAndView reservations(@RequestParam(name = "id", required = true) Integer id) {
+		Vol vol = volservice.findVolById(id);
 		ModelAndView modelAndView = new ModelAndView("vol/reservations", "reservations", volservice.showReservationByVol(vol.getIdVol())); 
 		return modelAndView;
 	}
@@ -86,15 +87,15 @@ public class VolController {
 		if (br.hasErrors()) {
 			return goEdit(vol);
 		}
-		if (vol.getAeroportArrivee() != null && vol.getAeroportArrivee().getIdAeroport() == null) {
-			vol.setAeroportArrivee(null);
-		}
-		if (vol.getAeroportDepart() != null && vol.getAeroportDepart().getIdAeroport()  == null) {
-			vol.setAeroportDepart(null);
-		} 
-		volservice.saveVol(vol);
-
+//		if (vol.getAeroportArrivee() != null && vol.getAeroportArrivee().getIdAeroport() == null) {
+//			vol.setAeroportArrivee(null);
+//		}
+//		if (vol.getAeroportDepart() != null && vol.getAeroportDepart().getIdAeroport()  == null) {
+//			vol.setAeroportDepart(null);
+//		} 
+		
+		volservice.saveVol(vol); 
 		return new ModelAndView("redirect:/vol/");
-	}
+	} 
 
 }
