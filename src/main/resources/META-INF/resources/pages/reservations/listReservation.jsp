@@ -14,27 +14,18 @@
 <body>
 	<table class="table">
 		<tr>
+			<th>id</th>
 			<th>Numéro de la réservation</th>
-			<th>Date Réservation</th>
-			<th>Heure Réservation</th>
-			<th>Client</th>
-			<th>Passager</th>
-			<th>Vol</th>
-			<th>Editer</th>
-			<th>Supprimer</th>
+			<th></th>
+			<th></th>
 		</tr>
-
 		<c:forEach var="reservation" items="${reservations}">
 			<tr>
 				<td>${reservation.numeroReservation}</td>
 				<td><fmt:formatDate value="${reservation.dateReservation}"
 						pattern="yyyy/MM/dd" /></td>
-				<td><fmt:formatDate value="${reservation.heureReservation}"
-						pattern="HH:mm" /></td>
-				<td>${reservation.client.clientName}</td>
-				<td>${reservation.passager.nom }</td>
-				<td>${reservation.vol.idVol}</td>
-
+				<%-- <td><fmt:formatDate value="${reservation.heureReservation}"
+						pattern="HH:mm" /></td> --%>
 				<td><a class="btn btn-warning"
 					href="./editReservation?numeroReservation=${reservation.numeroReservation}">Edit</a></td>
 				<td><a class="btn btn-danger"
@@ -49,7 +40,6 @@
 	<div align="center">
 		<a class="btn btn-warning" href="../accueil">Accueil</a>
 	</div>
-
 
 </body>
 </html>

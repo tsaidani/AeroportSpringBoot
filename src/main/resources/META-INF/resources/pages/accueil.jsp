@@ -38,14 +38,14 @@ body {
 						<li class="nav-item active"><a class="nav-link"
 							href="../accueil">Home <span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="/aeroportSpring/client">Clients</a>
+						<li class="nav-item"><a class="nav-link" href="/aero/client">Clients</a>
 						</li>
 						<li class="nav-item"><a class="nav-link"
-							href="/aeroportSpring/reservation">Reservations</a></li>
-						<li class="nav-item"><a class="nav-link" href="/aeroportSpring/vol">Vols</a>
+							href="/aero/reservation">Reservations</a></li>
+						<li class="nav-item"><a class="nav-link" href="/aero/vol">Vols</a>
 						</li>
 						<li class="nav-item"><a class="nav-link"
-							href="/aeroportSpring/passager">Passagers</a></li>
+							href="/aero/passager">Passagers</a></li>
 					</ul>
 				</div>
 			</nav> 

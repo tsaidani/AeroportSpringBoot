@@ -16,7 +16,7 @@
 			<legend>Edition de réservation</legend>
 			<form:form action="saveReservation" method="get"
 				modelAttribute="reservation">
-				<form:hidden path="version" />
+				 <form:hidden path="version" />
 				<div class="form-group">
 					<form:label path="numeroReservation">Numéro de la réservation</form:label>
 					<form:input path="numeroReservation" readonly="true"
@@ -29,13 +29,7 @@
 						cssClass="form-control"></form:input>
 					<form:errors path="dateReservation"></form:errors>
 				</div>
-
-				<div class="form-group">
-					<form:label path="heureReservation">heureReservation : </form:label>
-					<form:input type="time" path="heureReservation" cssClass="form-control" />
-					<form:errors path="heureReservation"></form:errors>
-				</div>
-				<%-- 	<div class="form-group">
+			<%-- 	<div class="form-group">
 					<form:label path="heureReservation">Heure de la réservation</form:label>
 					<form:input type="time" path="heureReservation"
 						cssClass="form-control"></form:input>

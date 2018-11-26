@@ -16,7 +16,6 @@
 		<tr>
 			<th>Numéro de la réservation</th>
 			<th>Date Réservation</th>
-			<th>Heure Réservation</th>
 			<th>Client</th>
 			<th>Passager</th>
 			<th>Vol</th>
@@ -28,8 +27,10 @@
 			<tr>
 				<td>${reservation.numeroReservation}</td>
 				<td><fmt:formatDate value="${reservation.dateReservation}"
-						pattern="yyyy/MM/dd" /></td>  
-				<td><fmt:formatDate value="${reservation.heureReservation}" pattern="HH:mm" /></td>
+						pattern="yyyy/MM/dd" /></td>
+				<%-- <td><fmt:formatDate value="${reservation.heureReservation}"
+						pattern="HH:mm" /></td> --%>
+
 				<td>${reservation.client.clientName}</td>
 				<td>${reservation.passager.nom }</td>
 				<td>${reservation.vol.idVol}</td>
