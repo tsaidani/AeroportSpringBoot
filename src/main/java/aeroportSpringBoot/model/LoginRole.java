@@ -44,6 +44,4 @@ public class LoginRole {
 
 	
 }
->>>>>>> Stashed changes
 
-}
