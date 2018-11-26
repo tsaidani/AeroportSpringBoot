@@ -14,5 +14,4 @@ public interface ClientRepository extends JpaRepository<Client, Integer>{
 	
 	@Query("select c from Client c left join fetch c.reservations where c.clientId=:id") //permet de recup�rer le vol avec la liste des reservations
 	Optional<Client> findClientWithReservation(@Param("id")Integer clientId); // car le findById standard n'embarque pas les listes dans les objets !
-
 }

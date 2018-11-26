@@ -21,26 +21,25 @@ public class VolService {
 	@Autowired
 	private ReservationRepository reservationRepository;
 
+	public void saveVol(Vol vol) {
+		volRepository.save(vol);
+	}
+
 	public void createVol(Vol vol) {
 		if (vol != null) {
 			volRepository.save(vol);
 		}
 	}
 
-	public void saveVol(Vol vol) {
-//		if (vol.getAeroportArrivee() != null && vol.getAeroportDepart() != null && vol.getDateDepart() != null
-//				&& vol.getDateArrivee() != null && vol.getHeureArrivee() != null && vol.getHeureDepart() != null) {
-			volRepository.save(vol);
-//		}
-
-	}
- 
-
-	public void deleteVol(Vol vol) {
-		deleteVolById(vol.getIdVol());
+	public void updateVol(Vol vol) {
+		List<Vol> vols = volRepository.findAll();
+		if (vols.contains(volRepository.findById(vol.getIdVol()).get())) {
+			Vol v = volRepository.findById(vol.getIdVol()).get();
+			volRepository.save(v);
+		}
 	}
 
-	public void deleteVolById(Integer idVol) {
+	public void deleteVol(Integer idVol) {
 		Optional<Vol> opt = volRepository.findVolWithReservation(idVol);
 		if (opt.isPresent()) {
 			Vol vol = opt.get();
@@ -56,22 +55,35 @@ public class VolService {
 		volRepository.deleteById(idVol);
 	}
 
+	public Vol findById(Integer idVol) {
+		return volRepository.findById(idVol).get();
+	}
+
 	public void deleteAllVol() {
 		List<Vol> vols = volRepository.findAll();
 		for (Vol vol : vols) {
-			deleteVolById(vol.getIdVol());
+			deleteVol(vol.getIdVol());
 		}
+	}
+
+	public void deleteVolById(Integer id) {
+		List<Reservation> ero = showReservationByVol(id);
+		for (Reservation r : ero) {
+			reservationRepository.delete(r);
+		}
+		volRepository.deleteById(id);
+	}
+
+	public void deleteVol(Vol vol) {
+		deleteVolById(vol.getIdVol());
 	}
 
 	public List<Vol> showAll() {
 		List<Vol> vols = volRepository.findAll();
 		return vols;
 	}
-	public List<Vol> findAllWithReservation(){
-		return volRepository.findAllWithReservation();
-	}
 
-	public Vol findVolById(Integer idVol) {
+	public Vol showVol(Integer idVol) {
 		Optional<Vol> opt = volRepository.findById(idVol);
 		Vol vol = null;
 		if (opt.isPresent()) {
@@ -88,15 +100,6 @@ public class VolService {
 			reservations = vol.getReservations();
 		}
 		return reservations;
-	}
-	public Vol findVolWithReservation(Integer idVol) {
-		Optional<Vol> opt = volRepository.findVolWithReservation(idVol);
-		if(opt.isPresent()) {
-			Vol vol = opt.get();
-			return vol;
-		}else {
-			return null;
-		}
 	}
 
 	public List<CompagnieVol> showCompagniesByVol(Integer idVol) {
@@ -127,6 +130,11 @@ public class VolService {
 	public List<Vol> showVolByDateArriveeBetween(Date date1, Date date2) {
 		List<Vol> vols = volRepository.findByHeureDepartBetween(date1, date2);
 		return vols;
+	}
+
+	public void update(Vol vol) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
