@@ -1,13 +1,16 @@
 package aeroportSpringBoot.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import aeroportSpringBoot.model.Adresse;
 import aeroportSpringBoot.model.Client;
+import aeroportSpringBoot.model.Passager;
 import aeroportSpringBoot.model.Reservation;
 import aeroportSpringBoot.repositories.ClientRepository;
 
@@ -81,8 +84,13 @@ public class ClientService {
 		return client;
 	}
 	public Client findClientById(Integer id) {
-		Client client= clientRepository.findById(id).get();
-		return client;
+		Optional<Client> opt=clientRepository.findById(id);
+		if (opt.isPresent()) {
+			Client client = opt.get();
+			return client;
+			}else {
+				return null;
+			}
 	}
 	
 	public List<Client> findAllClients(){
@@ -100,6 +108,24 @@ public class ClientService {
 	}
 	
 	public Client findClientWithReservation(Integer clientId) {
-		return clientRepository.findClientWithReservation(clientId).get();
+		Optional<Client> opt=clientRepository.findClientWithReservation(clientId);
+		if (opt.isPresent()) {
+			Client client = opt.get();
+			return client;
+			}else {
+				return null;
+			}
+	}
+	public Map<Reservation, Passager>showClientsWithPassagers(Integer idClient){
+		Map<Reservation, Passager> hm = new HashMap<Reservation, Passager>();
+		List<Reservation> reservations=showReservationByClient(idClient);
+		if (reservations!=null) {
+		for (Reservation reservation:reservations) {
+			hm.put(reservation, reservation.getPassager());
+		}
+		return hm;
+		}else {
+			return null;
+		}
 	}
 }
