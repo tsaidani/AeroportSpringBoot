@@ -58,50 +58,50 @@ public class ClientRestController {
 		}
 		return response;
 	}
-		@PostMapping(path = { "", "/" })
-		public ResponseEntity<Void> createClientMoral(@Valid @RequestBody ClientMoral client, BindingResult br,
-				UriComponentsBuilder uCB) {
-			ResponseEntity<Void> response = null;
-			if (br.hasErrors()) {
-				response = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-			} else {
-				clientRepository.save(client);
-				HttpHeaders header = new HttpHeaders();
-				header.setLocation(
-						uCB.path("/rest/client/{id}").buildAndExpand(client.getClientId()).toUri());
-				response = new ResponseEntity<>(header, HttpStatus.CREATED); // on renvoit l'adresse de ce qu'on a crée
-			}
-			return response;
-	}
+//		@PostMapping(path = { "", "/" })
+//		public ResponseEntity<Void> createClient(@Valid @RequestBody Client client, BindingResult br,
+//				UriComponentsBuilder uCB) {
+//			ResponseEntity<Void> response = null;
+//			if (br.hasErrors()) {
+//				response = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//			} else {
+//				clientRepository.save(client);
+//				HttpHeaders header = new HttpHeaders();
+//				header.setLocation(
+//						uCB.path("/rest/client/{id}").buildAndExpand(client.getClientId()).toUri());
+//				response = new ResponseEntity<>(header, HttpStatus.CREATED); // on renvoit l'adresse de ce qu'on a crée
+//			}
+//			return response;
+//	}
 		
-		@PostMapping(path = { "", "/" })
-		public ResponseEntity<Void> createClientMoral(@Valid @RequestBody ClientEl client, BindingResult br,
-				UriComponentsBuilder uCB) {
-			ResponseEntity<Void> response = null;
-			if (br.hasErrors()) {
-				response = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-			} else {
-				clientRepository.save(client);
-				HttpHeaders header = new HttpHeaders();
-				header.setLocation(
-						uCB.path("/rest/client/{id}").buildAndExpand(client.getClientId()).toUri());
-				response = new ResponseEntity<>(header, HttpStatus.CREATED); // on renvoit l'adresse de ce qu'on a crée
-			}
-			return response;
-	}
-		
-	@GetMapping(path= {"/reservation"})
-	@JsonView(JsonViews.Common.class)
-	public ResponseEntity<Client> findClientWithReservation(@PathVariable(name = "id") Integer id) {
-		Client client = clientService.findClientWithReservation(id);
-		ResponseEntity<Client> response = null;
-		if (client!=null) {
-			response = new ResponseEntity<Client>(client, HttpStatus.OK);
-		} else {
-			response = new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		}
-		return response;
-	}
+//		@PostMapping(path = { "", "/" })
+//		public ResponseEntity<Void> createClientEl(@Valid @RequestBody ClientEl client, BindingResult br,
+//				UriComponentsBuilder uCB) {
+//			ResponseEntity<Void> response = null;
+//			if (br.hasErrors()) {
+//				response = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//			} else {
+//				clientRepository.save(client);
+//				HttpHeaders header = new HttpHeaders();
+//				header.setLocation(
+//						uCB.path("/rest/client/{id}").buildAndExpand(client.getClientId()).toUri());
+//				response = new ResponseEntity<>(header, HttpStatus.CREATED); // on renvoit l'adresse de ce qu'on a crée
+//			}
+//			return response;
+//	}
+//		
+//	@GetMapping(path= {"/reservation"})
+//	@JsonView(JsonViews.Common.class)
+//	public ResponseEntity<Client> findClientWithReservation(@PathVariable(name = "id") Integer id) {
+//		Client client = clientService.findClientWithReservation(id);
+//		ResponseEntity<Client> response = null;
+//		if (client!=null) {
+//			response = new ResponseEntity<Client>(client, HttpStatus.OK);
+//		} else {
+//			response = new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//		}
+//		return response;
+//	}
 
 	@GetMapping(path = { "/passager" })
 	@JsonView(JsonViews.Common.class)
