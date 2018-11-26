@@ -32,13 +32,13 @@ public class Reservation {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@JsonView(JsonViews.Common.class)
 	private Date dateReservation; 
-
 	@DateTimeFormat(pattern = "HH:mm")
 	@Temporal(TemporalType.TIME)
 	@Column(name = "heure_reservation", length = 20)
 	@JsonView(JsonViews.Common.class)
 	private Date heureReservation;
  
+
 	@ManyToOne
 	@JoinColumn(name="id_client")
 	@JsonView(JsonViews.Common.class)
@@ -77,6 +77,18 @@ public class Reservation {
 
 	public Client getClient() {
 		return client;
+	}
+	
+	public Date getHeureReservation() {
+		return heureReservation;
+	}
+
+	public void setHeureReservation(Date heureReservation) {
+		this.heureReservation = heureReservation;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public Passager getPassager() {
