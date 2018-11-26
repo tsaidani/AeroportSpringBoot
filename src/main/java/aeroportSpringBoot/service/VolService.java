@@ -7,11 +7,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import aeroportSpringBoot.model.CompagnieVol;
-import aeroportSpringBoot.model.Reservation;
-import aeroportSpringBoot.model.Vol;
-import aeroportSpringBoot.repositories.ReservationRepository;
-import aeroportSpringBoot.repositories.VolRepository;
+import model.CompagnieVol;
+import model.Reservation;
+import model.Vol;
+import repositories.ReservationRepository;
+import repositories.VolRepository;
 
 @Service
 public class VolService {

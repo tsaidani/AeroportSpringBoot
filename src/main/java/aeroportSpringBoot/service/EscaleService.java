@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import aeroportSpringBoot.model.Aeroport;
-import aeroportSpringBoot.model.Escale;
-import aeroportSpringBoot.model.EscaleKey;
-import aeroportSpringBoot.model.Vol;
-import aeroportSpringBoot.repositories.EscaleRepository;
+import model.Aeroport;
+import model.Escale;
+import model.EscaleKey;
+import model.Vol;
+import repositories.EscaleRepository;
 
 @Service
 public class EscaleService {

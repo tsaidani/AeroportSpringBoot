@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import aeroportSpringBoot.model.Adresse;
-import aeroportSpringBoot.model.Client;
-import aeroportSpringBoot.model.Reservation;
-import aeroportSpringBoot.repositories.ClientRepository;
+import model.Adresse;
+import model.Client;
+import model.Reservation;
+import repositories.ClientRepository;
 
 @Service
 public class ClientService {
