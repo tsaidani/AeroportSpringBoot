@@ -51,8 +51,11 @@ body {
 						href="/aeroportSpring/passager">Passagers</a></li>
 					<li class="nav-item"><c:if
 							test="${pageContext.request.userPrincipal.name != null}">
-			logged as ${pageContext.request.userPrincipal.name}<a class="btn"
+			logged as ${pageContext.request.userPrincipal.name}<a class="btn btn-warning"
 								href="../logout">logout</a>
+						</c:if> <c:if test="${pageContext.request.userPrincipal.name == null}">
+			 ${pageContext.request.userPrincipal.name}<a class="btn btn-success"
+								href="../login">login</a>
 						</c:if></li>
 
 				</ul>

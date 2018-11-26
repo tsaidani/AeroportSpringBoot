@@ -31,7 +31,4 @@ public interface VolRepository extends JpaRepository<Vol, Integer> {
 	@Query("select v from Vol v left join fetch v.reservations")
 	List<Vol> findAllWithReservation();
 
-	
-	@Query("select v from Vol v left join fetch v.reservations")
-	List<Vol> findAllWithReservation();
 }
