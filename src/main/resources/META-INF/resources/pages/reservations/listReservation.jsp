@@ -12,10 +12,11 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<table class="table">
+	<table class="table">
 		<tr>
 			<th>Numéro de la réservation</th>
 			<th>Date Réservation</th>
+			<th>Heure Réservation</th>
 			<th>Client</th>
 			<th>Passager</th>
 			<th>Vol</th>
@@ -28,9 +29,8 @@
 				<td>${reservation.numeroReservation}</td>
 				<td><fmt:formatDate value="${reservation.dateReservation}"
 						pattern="yyyy/MM/dd" /></td>
-				<%-- <td><fmt:formatDate value="${reservation.heureReservation}"
-						pattern="HH:mm" /></td> --%>
-
+				<td><fmt:formatDate value="${reservation.heureReservation}"
+						pattern="HH:mm" /></td>
 				<td>${reservation.client.clientName}</td>
 				<td>${reservation.passager.nom }</td>
 				<td>${reservation.vol.idVol}</td>
@@ -49,6 +49,7 @@
 	<div align="center">
 		<a class="btn btn-warning" href="../accueil">Accueil</a>
 	</div>
+
 
 </body>
 </html>
