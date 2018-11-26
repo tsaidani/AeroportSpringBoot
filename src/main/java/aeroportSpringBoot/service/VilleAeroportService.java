@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Aeroport;
-import model.Ville;
-import model.VilleAeroport;
-import model.VilleAeroportKey;
-import repositories.VilleAeroportRepository;
+import aeroportSpringBoot.model.Aeroport;
+import aeroportSpringBoot.model.Ville;
+import aeroportSpringBoot.model.VilleAeroport;
+import aeroportSpringBoot.model.VilleAeroportKey;
+import aeroportSpringBoot.repositories.VilleAeroportRepository;
 
 @Service
 public class VilleAeroportService {
