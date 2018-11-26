@@ -1,15 +1,14 @@
 package aeroportSpringBoot.repositories;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import model.Client;
-import model.Passager;
-import model.Reservation;
+import aeroportSpringBoot.model.Client;
+import aeroportSpringBoot.model.Passager;
+import aeroportSpringBoot.model.Reservation;
 
 
 public interface ReservationRepository extends JpaRepository<Reservation, Integer> {
