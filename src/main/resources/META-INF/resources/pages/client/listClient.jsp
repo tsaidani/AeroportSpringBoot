@@ -60,6 +60,7 @@
 				<td>${client.adresse.codePostal}</td>
 				<td>${client.adresse.ville}</td>
 				<td>${client.adresse.pays}</td>
+				<td><a class= "btn btn-success" href="./reservations?clientId=${client.clientId }">Voir réservations</a></td>
 				<td><a class= "btn btn-danger" href="./deleteClient?clientId=${client.clientId }">Supprimer</a></td>
 				<td><a class= "btn btn-warning" href="./editClient?clientId=${client.clientId }">Edition</a></td>
 

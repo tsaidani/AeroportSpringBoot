@@ -81,6 +81,11 @@ public class ReservationService {
 		List<Reservation> reservations = reservationRepository.findByNomClient(nom);
 		return reservations;
 	}
+	
+	public List<Reservation> showReservationByIdClient(Integer id) {
+		List<Reservation> reservations = reservationRepository.findByIdClient(id);
+		return reservations;
+	}
 
 	public List<Reservation> showReservationByNomPassager(String nom) {
 		List<Reservation> reservations = reservationRepository.findByNomPassager(nom);
